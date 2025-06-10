@@ -1,0 +1,264 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6fb;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: #181a1b;
+  color: #e3e3e3;
+}
+
+.navbar {
+  background: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.dark .navbar {
+  background: #111;
+  color: #e3e3e3;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.navbar form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.navbar input[type="text"] {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+body.dark .navbar input[type="text"] {
+  background: #222;
+  color: #e3e3e3;
+  border: 1px solid #444;
+}
+
+.navbar button, .dark-toggle {
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  border: none;
+  background: #4f8cff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.navbar button:hover, .dark-toggle:hover {
+  background: #2563eb;
+}
+
+.hero {
+  background: linear-gradient(90deg, #4f8cff 60%, #2563eb 100%);
+  color: #fff;
+  padding: 2.5rem 2rem 2rem 2rem;
+  text-align: center;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  margin-bottom: 2rem;
+}
+
+body.dark .hero {
+  background: linear-gradient(90deg, #232b3b 60%, #1a2130 100%);
+  color: #e3e3e3;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.app {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+body.dark .app {
+  background: #23272f;
+  color: #e3e3e3;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+}
+
+.book-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+body.dark .book-item {
+  border-bottom: 1px solid #333;
+}
+
+.book-item:hover {
+  background: #f0f4ff;
+}
+
+body.dark .book-item:hover {
+  background: #232b3b;
+}
+
+.book-item img {
+  width: 70px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.book-item .no-cover {
+  width: 70px;
+  height: 100px;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  color: #aaa;
+  font-size: 13px;
+}
+
+body.dark .book-item .no-cover {
+  background: #333;
+  color: #888;
+}
+
+.book-item-details {
+  flex: 1;
+}
+
+.book-item-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.book-item-author {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+body.dark .book-item-author {
+  color: #bbb;
+}
+
+.book-item-year {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+body.dark .book-item-year {
+  color: #aaa;
+}
+
+.footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+body.dark .footer {
+  background: #111;
+  color: #e3e3e3;
+}
+
+/* Modal styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  color: #222;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+body.dark .modal-content {
+  background: #23272f;
+  color: #e3e3e3;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.modal-cover {
+  width: 120px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  .book-list {
+    gap: 1rem !important;
+  }
+}
